@@ -50,10 +50,13 @@
                             news.html(
                                 '<p>' + text + '</p>' +
                                 '<img src="yes.png">'
-                            )
+                            );
                         } else
                         {
-                            news.html('<p>' + text + '</p>');
+                            news.html(
+                              '<p>' + text + '</p>' +
+                              '<img src="no.png">'
+                            );
                         }
                     })
                     .fail(function() {
