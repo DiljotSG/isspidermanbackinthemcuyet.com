@@ -5,49 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#DF4748">
-
-    <title>Is Spider-Man Back In The MCU Yet?</title>
+    <title>Is Spider-Man Back In The MCU Yet?
+    </title>
     <meta name="description" content="Is Spider-Man Back In The MCU Yet? find out!">
     <link rel="shortcut icon" href="favicon.png">
-
     <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
-	<link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/styles.css">
+    <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/themes/red-white.css">
   </head>
-
   <body>
-      <main>
-            <div class="intro">SPIDEY</div>
-      </main>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <main>
+      <div class="intro">SPIDEY
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.1.0.js">
+    </script>
     <script>
       $(function(){
-
         var url = 'https://zapier.com/engine/rss/78436/isspideyback/';
         var news = $('.intro');
-
         function loadNews(url) {
           $.ajax({
             url: url,
             type: 'GET',
             dataType: "xml"
-          })
-          .done(function(xml) {
+          }
+                )
+            .done(function(xml) {
             var self = $(xml).find('channel item').first();
             var text = $(self).find('description').text();
-
             news.html('<p>' + text + '</p>');
-          })
-          .fail(function(){
+          }
+                 )
+            .fail(function(){
             news.hide();
-          });
+          }
+                 );
         }
-
         loadNews(url);
-
-      });
+      }
+       );
     </script>
   </body>
 </html>
