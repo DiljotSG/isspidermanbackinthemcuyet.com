@@ -33,49 +33,16 @@
 
   <body>
     <main>
-      <div class="intro">...</div>
+      <!-- Contribution made by github.com/amroller :wink: -->
+      <div class="intro">
+        <p>YES!</p>
+        <img src="yes.png">
+      </div>
 
       <div class="icons-social">
 			<a target="_blank" href="https://github.com/DiljotSG/isspidermanbackinthemcuyet.com"><i class="fab fa-github"></i></a>
 			<a target="_blank" href="https://twitter.com/IsSpideyBack"><i class="fab fa-twitter"></i></a>
         </div>
     </main>
-    
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script>
-      $(function() {
-            var url = 'https://zapier.com/engine/rss/78436/isspideyback/';
-            var news = $('.intro');
-
-            function loadNews(url) {
-                $.ajax({
-                        url: url,
-                        type: 'GET',
-                        dataType: "xml"
-                    })
-                    .done(function(xml) {
-                        var self = $(xml).find('channel item').first();
-                        var text = $(self).find('description').text();
-
-                        if(text.indexOf('YES!') >= 0) {
-                            news.html(
-                                '<p>' + text + '</p>' +
-                                '<img src="yes.png">'
-                            );
-                        } else
-                        {
-                            news.html(
-                              '<p>' + text + '</p>' +
-                              '<img src="no.png">'
-                            );
-                        }
-                    })
-                    .fail(function() {
-                        news.hide();
-                    });
-            }
-            loadNews(url);
-        });
-    </script>
   </body>
 </html>
